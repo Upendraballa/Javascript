@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Js</title>
+	<script type="text/javascript">
+		function validate()
+		{
+			var email=document.myForm.email.value;
+			if(email.indexOf('@',0)<0){
+				alert("enter @ symbol in email");
+				document.myForm.email.focus();
+				return false;
+			}
+			if(email.indexOf('.',0)<0){
+				alert("enter . symbol in email");
+				document.myForm.email.focus();
+				return false;
+			}
+			var password=document.myForm.password.value;
+			 if (isNaN(x) || x < 1 || x > 10) 
+			 {
+        text = "Input not valid";
+    } 
+    else {
+        text = "Input OK";
+    }
+
+		}
+	</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return validate()" method="post">
+	<table>
+		<tr><td>Email:
+	<input type="text" name="email" placeholder="enter email" required></td></tr>
+	<tr><td>Password:
+	<input type="password" name="password" placeholder="enter password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td></tr>
+<tr><td><small>Captial,Small,special characters min 8 characters</small></td></tr>
+	<tr><td><input type="checkbox" onclick="validate()">Show Password</td></tr>
+	<tr><td>
+	<input type="submit"></td></tr>
+	</table>
+</form>
+</body>
+</html>
